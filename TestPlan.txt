@@ -1,0 +1,28 @@
+# Trello with Selenium and Cucumber
+
+Testing Trello app with Selenium and Cucumber
+
+# Overview and Objectives
+
+- The main objective of this test plan is to create a strategy and approach to automate tests for the web application Trello.
+- Verify the functionality of the basic Trello features to ensure the quality of the product.
+
+# Scope
+
+- Create, edit and delete organizations and boards.
+
+# Scenarios
+
+- Verify that user can login into trello page.
+- Verify that user can logout from trello page.
+- Verify that user can create a new organization.
+- Verify that user can edit an organization name.
+- Verify that user can delete an existing organization.
+- Verify that user can create a board.
+- Verify that user can create a private board.
+- Verify that user can delete an existing board.
+
+# Testing tools
+
+- Selenium WebDriver: for automtaed tests.
+- Cucumber: for writing and executing BDD tests.
