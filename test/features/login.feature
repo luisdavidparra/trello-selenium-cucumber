@@ -4,8 +4,6 @@ Feature: Login
     @01 @ui @openBrowser @closeBrowser
     Scenario: Verify that user can login into trello page
         Given I navigate to trello login page
-        When I introduce the user credentials:
-            | email    | admin.email    |
-            | password | admin.password |
+        When I introduce the "admin" user credentials
         And I click on login button
-        Then I verify that user "email" is logged
+        Then I verify that "admin" user is logged
