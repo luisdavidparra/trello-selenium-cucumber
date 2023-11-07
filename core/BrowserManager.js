@@ -9,7 +9,7 @@ module.exports = class BrowserManager {
     if (!this.driver) {
       this.driver = new Builder().forBrowser("chrome").build();
       this.driver.manage().window().maximize();
-      this.driver.manage().setTimeouts({ implicit: 5000 });
+      this.driver.manage().setTimeouts({ implicit: 10000 });
     }
   }
 
