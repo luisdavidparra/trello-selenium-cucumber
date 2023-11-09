@@ -28,3 +28,13 @@ Then("I verify that {string} user is logged", async (userRole) => {
   const actualEmailElementText = await getText(TopBarPage.accountMenuEmailLbl(user.email));
   expect(actualEmailElementText).to.eql(user.email);
 });
+
+Given("I login into trello page with {string} user credentials", async (userRole) => {
+  const user = credentials[userRole];
+  await BrowserManager.driver.get(credentials.trelloURL);
+  await clickOn(LoginPage.loginBtn);
+  await sendKeys(LoginPage.usernameLbl, user.email);
+  await clickOn(LoginPage.loginSubmitBtn);
+  await sendKeys(LoginPage.passwordLbl, user.password);
+  await clickOn(LoginPage.loginSubmitBtn);
+});
