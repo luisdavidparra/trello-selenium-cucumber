@@ -4,28 +4,27 @@ const { expect } = require("chai");
 const { credentials } = require("../../../env.json");
 const LoginPage = require("../../../trello/page_object/login_page");
 const TopBarPage = require("../../../trello/page_object/common/top_bar_page");
+const { clickOn, sendKeys, getText } = require("../../../core/actions");
 
 Given("I navigate to trello login page", async () => {
   await BrowserManager.driver.get(credentials.trelloURL);
-  await BrowserManager.driver.findElement(LoginPage.loginBtn).click();
+  await clickOn(LoginPage.loginBtn);
 });
 
 When("I introduce the {string} user credentials", async (userRole) => {
   const user = credentials[userRole];
-  await BrowserManager.driver.findElement(LoginPage.usernameLbl).sendKeys(user.email);
-  await BrowserManager.driver.findElement(LoginPage.loginSubmitBtn).click();
-  await BrowserManager.driver.findElement(LoginPage.passwordLbl).sendKeys(user.password);
+  await sendKeys(LoginPage.usernameLbl, user.email);
+  await clickOn(LoginPage.loginSubmitBtn);
+  await sendKeys(LoginPage.passwordLbl, user.password);
 });
 
 When("I click on login button", async () => {
-  await BrowserManager.driver.findElement(LoginPage.loginSubmitBtn).click();
+  await clickOn(LoginPage.loginSubmitBtn);
 });
 
 Then("I verify that {string} user is logged", async (userRole) => {
   const user = credentials[userRole];
-  await BrowserManager.driver.findElement(TopBarPage.headerMemberMenuBtn).click();
-  const actualEmailElement = await BrowserManager.driver
-    .findElement(TopBarPage.accountMenuEmailLbl(user.email))
-    .getText();
-  expect(actualEmailElement).to.exist;
+  await clickOn(TopBarPage.headerMemberMenuBtn);
+  const actualEmailElementText = await getText(TopBarPage.accountMenuEmailLbl(user.email));
+  expect(actualEmailElementText).to.eql(user.email);
 });
