@@ -1,5 +1,5 @@
 const { until, Key } = require("selenium-webdriver");
-const BrowserManager = require("./browser_manager");
+const BrowserManager = require("../browser_manager");
 
 async function clickOn(locator) {
   await BrowserManager.driver.wait(until.elementLocated(locator));
@@ -30,6 +30,10 @@ async function moveToElement(locator) {
   await BrowserManager.driver.executeScript("arguments[0].scrollIntoView(true);", element);
 }
 
+async function clearInput(locator) {
+  await BrowserManager.driver.findElement(locator).clear();
+}
+
 module.exports = {
   clickOn,
   sendKeys,
@@ -37,4 +41,5 @@ module.exports = {
   getElement,
   pressEnterKey,
   moveToElement,
+  clearInput,
 };

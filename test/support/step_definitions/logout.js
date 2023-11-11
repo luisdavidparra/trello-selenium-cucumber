@@ -5,7 +5,7 @@ const LoginPage = require("../../../trello/page_object/login_page");
 const LogoutPage = require("../../../trello/page_object/logout_page");
 const TopBarPage = require("../../../trello/page_object/common/top_bar_page");
 const { until } = require("selenium-webdriver");
-const { clickOn, getElement } = require("../../../core/actions");
+const { clickOn, getElement } = require("../../../core/ui/actions");
 
 When("I logout from trello page", async () => {
   await clickOn(TopBarPage.headerMemberMenuBtn);

@@ -4,7 +4,7 @@ const { expect } = require("chai");
 const { credentials } = require("../../../env.json");
 const LoginPage = require("../../../trello/page_object/login_page");
 const TopBarPage = require("../../../trello/page_object/common/top_bar_page");
-const { clickOn, sendKeys, getText } = require("../../../core/actions");
+const { clickOn, sendKeys, getText } = require("../../../core/ui/actions");
 
 Given("I navigate to trello login page", async () => {
   await BrowserManager.driver.get(credentials.trelloURL);
