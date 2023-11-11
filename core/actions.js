@@ -1,5 +1,5 @@
 const { until, Key } = require("selenium-webdriver");
-const BrowserManager = require("./BrowserManager");
+const BrowserManager = require("./browser_manager");
 
 async function clickOn(locator) {
   await BrowserManager.driver.wait(until.elementLocated(locator));

@@ -1,5 +1,5 @@
 const { Before, After, Status } = require("@cucumber/cucumber");
-const BrowserManager = require("../../../core/BrowserManager");
+const BrowserManager = require("../../../core/browser_manager");
 const fsp = require("fs").promises;
 
 Before({ tags: "@openBrowser" }, async () => {

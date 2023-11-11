@@ -1,7 +1,6 @@
-const { Given, When, Then } = require("@cucumber/cucumber");
-const BrowserManager = require("../../../core/BrowserManager");
+const { When, Then } = require("@cucumber/cucumber");
+const BrowserManager = require("../../../core/browser_manager");
 const { expect } = require("chai");
-const { credentials } = require("../../../env.json");
 const LoginPage = require("../../../trello/page_object/login_page");
 const LogoutPage = require("../../../trello/page_object/logout_page");
 const TopBarPage = require("../../../trello/page_object/common/top_bar_page");
