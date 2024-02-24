@@ -1,6 +1,6 @@
 const { When, Then } = require("@cucumber/cucumber");
 const { expect } = require("chai");
-const TopBarPage = require("../../../trello/page_object/common/top_bar_page");
+const TopBarPage = require("../../../../trello/page_object/common/top_bar_page");
 const {
   clickOn,
   sendKeys,
@@ -8,9 +8,9 @@ const {
   getElement,
   clearInput,
   getText,
-} = require("../../../core/ui/actions");
-const OrganizationPage = require("../../../trello/page_object/organization_page");
-const LeftBarPage = require("../../../trello/page_object/common/left_bar_page");
+} = require("../../../../core/ui/actions");
+const OrganizationPage = require("../../../../trello/page_object/organization_page");
+const LeftBarPage = require("../../../../trello/page_object/common/left_bar_page");
 
 When("I open the menu to create a new organization", async () => {
   await clickOn(TopBarPage.headerCreateMenuBtn);

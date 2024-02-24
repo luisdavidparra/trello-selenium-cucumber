@@ -1,8 +1,8 @@
-@openBrowser @closeBrowser
+@openBrowser @closeBrowser @ui
 Feature: Organization
     User can manage organizations
 
-    @03 @ui @deleteOrganization
+    @03 @deleteOrganization
     Scenario: Verify that user can create a new organization
         Given I login into trello page with "admin" user credentials
         When I open the menu to create a new organization
@@ -11,7 +11,7 @@ Feature: Organization
         And I click on continue button to submit values
         Then I verify that organization "AT-Organization" was created
 
-    @04 @ui @createOrganization @deleteEditedOrganization
+    @04 @createOrganization @deleteEditedOrganization
     Scenario: Verify that user can edit an organization name
         Given I login into trello page with "admin" user credentials
         When I open "AT-Organization" organization settings

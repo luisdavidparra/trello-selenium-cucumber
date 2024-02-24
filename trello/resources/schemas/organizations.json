@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "displayName": { "type": "string" },
+    "desc": { "type": "string" },
+    "descData": {
+      "type": "object",
+      "properties": {
+        "emoji": { "type": "object" }
+      },
+      "required": ["emoji"]
+    },
+    "url": { "type": "string" },
+    "website": { "type": "string", "nullable": true },
+    "teamType": { "type": "string", "nullable": true },
+    "logoHash": { "type": "string", "nullable": true },
+    "logoUrl": { "type": "string", "nullable": true },
+    "offering": { "type": "string" },
+    "products": { "type": "array" },
+    "powerUps": { "type": "array" }
+  },
+  "required": [
+    "id",
+    "name",
+    "displayName",
+    "desc",
+    "descData",
+    "url",
+    "offering",
+    "products",
+    "powerUps"
+  ]
+}

@@ -7,6 +7,9 @@ class CustomWorld extends World {
   constructor(options) {
     super(options);
   }
+  entities = {
+    board: {},
+  };
 }
 
 setWorldConstructor(CustomWorld);

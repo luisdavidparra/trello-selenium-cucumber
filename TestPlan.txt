@@ -11,7 +11,7 @@ Testing Trello app with Selenium and Cucumber
 
 - Create, edit and delete organizations and boards.
 
-# Scenarios
+# UI Scenarios
 
 - Verify that user can login into trello page.
 - Verify that user can logout from trello page.
@@ -21,6 +21,16 @@ Testing Trello app with Selenium and Cucumber
 - Verify that user can create a board.
 - Verify that user can create a private board.
 - Verify that user can delete an existing board.
+
+# API Scenarios
+
+- Verify that user can create an organization providing the name.
+- Verify that user can update the name of an existing organization.
+- Verify that user can not create an organization with 0 characters in the name.
+- Verify that user can create a board providing the name.
+- Verify that user can update the name of an existing board.
+- Verify that user can not create a board with 0 characters in the name.
+- Verify that user can create a board with special characters (!"#$%) in its name.
 
 # Testing tools
 
