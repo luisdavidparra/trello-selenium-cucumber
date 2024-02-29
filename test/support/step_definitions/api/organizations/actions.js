@@ -3,7 +3,7 @@ const { flatten } = require("flat");
 const RequestManager = require("../../../../../core/api/request_manager");
 
 Given("I set the body of a new organization with:", function (table) {
-  this.entities.organization = table.rowsHash();
+  this.entities.organization = { ...this.entities.organization, ...table.rowsHash() };
 });
 
 When("I send a {string} request to {string} for an organization", async function (method, endpoint) {
